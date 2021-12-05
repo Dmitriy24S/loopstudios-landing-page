@@ -22,7 +22,7 @@ header {
 .header-title {
   text-transform: uppercase;
   position: relative;
-  top: 40%;
+  top: 30%;
   min-width: 290px;
   padding: 20px;
   border: 2px solid white;
@@ -63,6 +63,31 @@ p {
   color: hsl(0, 0%, 55%);
 }
 /* imgs */
+.imgs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.img {
+  cursor: pointer;
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 46px 0px 100px rgb(0 0 0 / 79%);
+}
+.img-text {
+  z-index: 2;
+  position: absolute;
+  width: 170px;
+  left: 1.6rem;
+  bottom: 2rem;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
 .img-creation1 {
   background-image: url("./images/mobile/image-deep-earth.jpg");
   background-size: cover;
@@ -89,27 +114,6 @@ p {
 .img-creation8 {
   background-image: url("./images/mobile/image-fisheye.jpg");
 }
-.img {
-  cursor: pointer;
-  position: relative;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  box-shadow: inset 46px 0px 100px rgb(0 0 0 / 79%);
-}
-.img-text {
-  z-index: 2;
-  position: absolute;
-  bottom: 1rem;
-  width: 170px;
-  left: 2rem;
-  bottom: 2rem;
-  color: white;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 2rem;
-  text-transform: uppercase;
-  line-height: 1.1;
-}
 /* btn */
 .button {
   border: 2px solid black;
@@ -120,6 +124,9 @@ p {
 }
 .button:focus-visible {
   box-shadow: 0 0 0 4px #3c82fa;
+}
+.desktop-btn {
+  display: none;
 }
 /* footer */
 .copyright {
@@ -132,6 +139,19 @@ p {
 }
 .attribution a {
   color: hsl(0, 0%, 55%);
+}
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* .copyright { */
+.links-mobile {
+  margin-bottom: 2rem;
+}
+.links-desktop {
+  display: none;
 }
 /* show */
 .show {
@@ -163,10 +183,6 @@ p {
     background-color: black;
     color: white;
   }
-  .img:hover {
-    position: relative;
-    display: inline-block;
-  }
   .img:hover:after {
     position: absolute;
     content: "";
@@ -195,8 +211,153 @@ p {
     width: 100%;
     left: 0;
   }
+  .nav-links li:hover:after {
+    width: 100%;
+    left: 0;
+  }
   .social-links li:hover:after {
     width: 100%;
     left: 0;
+  }
+  @media (min-width: 1024px) {
+    .nav-links li:hover:after {
+      width: 50%;
+      left: 25%;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  /* header desktop */
+  .menu-icon {
+    display: none;
+  }
+  .menu ul {
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.2rem;
+  }
+  .header-title {
+    font-size: 5rem;
+    max-width: 38rem;
+  }
+  /* main desktop */
+  .main-img {
+    background-image: url(./images/desktop/image-interactive.jpg);
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 60%;
+    height: 100%;
+  }
+  .first-section .container {
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    bottom: 0%;
+    background: white;
+    padding: 2rem;
+    padding-bottom: 0;
+    width: 50%;
+  }
+  .first-section {
+    position: relative;
+    min-height: 500px;
+    margin-top: 6rem;
+  }
+  section {
+    margin-bottom: 6rem;
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+  .section-title h2 {
+    padding: 0;
+  }
+  .desktop-btn {
+    display: block;
+    margin: 0;
+  }
+  .mobile-btn {
+    display: none;
+  }
+  /* imgs desktop */
+  .imgs-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .img {
+    /* height: 450px; */
+    height: 540px;
+    width: 20%;
+  }
+  .img-creation1 {
+    background-image: url("./images/desktop/image-deep-earth.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .img-creation2 {
+    background-image: url("./images/desktop/image-night-arcade.jpg");
+  }
+  .img-creation3 {
+    background-image: url("./images/desktop/image-soccer-team.jpg");
+  }
+  .img-creation4 {
+    background-image: url("./images/desktop/image-grid.jpg");
+  }
+  .img-creation5 {
+    background-image: url("./images/mobile/image-from-above.jpg");
+  }
+  .img-creation6 {
+    background-image: url("./images/desktop/image-pocket-borealis.jpg");
+  }
+  .img-creation7 {
+    background-image: url("./images/desktop/image-curiosity.jpg");
+  }
+  .img-creation8 {
+    background-image: url("./images/desktop/image-fisheye.jpg");
+  }
+  /* footer desktop*/
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 3rem 8rem;
+    padding-bottom: 1rem;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-top img {
+    margin: 0;
+  }
+  .links-desktop {
+    display: flex;
+  }
+  .links-mobile {
+    display: none;
+  }
+  .footer-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2rem 0;
+  }
+  .footer-menu {
+    display: flex;
+    flex-direction: row;
   }
 }
